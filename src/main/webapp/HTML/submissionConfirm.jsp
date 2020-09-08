@@ -9,7 +9,7 @@
 </head>
 <body>
 
-//<script>window.alert("Your quiz was submitted! Press Ok to view your answers");</script>
+<script>window.alert("Your quiz was submitted! Press Ok to view your answers");</script>
 <div class="container">
     <%
         List<Question> questions =
@@ -25,6 +25,8 @@
             String question = questions.get(i).getText();
             String options[] = questions.get(i).getQuestionOptions().split(";");
             String userAnswer = userSubmissions.get(i);
+        %>
+        <h2> <%=question%> </h2><%
 
             System.out.println("Option Value: " + userAnswer);
 
@@ -36,22 +38,28 @@
 
             System.out.println("Correct Answer "+ questions.get(i).getCorrectOptionIndex());
 
-            if(correctAnswer.equals(userAnswer))
-                count++;
-    %>  <p> <%=question%> </p>
-    <%--            <p><b>Options: </b> <%=options%></p>--%>
-    <p><b>Your Submission: </b><%=userAnswer%></p>
-    <p><b>Correct Submission: </b><%=correctAnswer%></p>
+            if(correctAnswer.equals(userAnswer)) {
+                count++;%>
+                <p style="color: lightgreen">Your Submission: <%=userAnswer%></p><%
+            }
+            else{
+                %>
+                <p style="color: red">Your Submission: <%=userAnswer%></p><%
+            }
+        %>
+<%--      <h2> <%=question%> </h2>--%>
+<%--    <p>Your Submission: <%=userAnswer%></p>--%>
+    <p style="color: lightgreen">Correct Submission: <%=correctAnswer%></p>
     <p></p>
     <%
             i++;
         }
         if(count>=6){
-    %> <h3>YOU PASSED!</h3> <%
+    %> <h2 style="color: lightgreen; text-decoration:underline">YOU PASSED!</h2> <%
             System.out.println("Pass");
         }
         else {
-    %> <h3>YOU FAILED!</h3> <%
+    %> <h2 style="color: red;text-decoration:underline">YOU FAILED!</h2> <%
         System.out.println("Fail");
         }
     %>

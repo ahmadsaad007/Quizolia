@@ -24,6 +24,7 @@ public class quiz extends HttpServlet {
         PrintWriter out = response.getWriter();
         String action = request.getParameter("action");
         HttpSession session = request.getSession(false);
+
         if(session == null || session.getAttribute("username")==null){
             out.print("<div style='margin-top: 50px; color: crimson;'>Please login first</div>");
             request.getRequestDispatcher("login.html").include(request, response);

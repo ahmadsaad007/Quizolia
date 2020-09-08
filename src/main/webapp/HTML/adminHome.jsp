@@ -12,6 +12,7 @@
   <body>
   <div class="container">
 
+    <h3>Active Users</h3>
     <table class = "table" >
       <tr id="heading">
         <th>Username</th>
@@ -19,14 +20,21 @@
         <th>Active Status</th>
       </tr>
   <%
+    session = request.getSession(false);
+    if(session == null || session.getAttribute("username")==null || !session.getAttribute("username").equals("admin")){
+            out.print("<div style='margin-top: 50px; color: crimson;'>Please sign in as Admin</div>");
+            request.getRequestDispatcher("login.html").include(request, response);
+    }
+
     Connection connection = ConnectionProvider.getConnection();
     PreparedStatement statement = null;
+
     try {
 
       statement = connection.prepareStatement("SELECT * FROM users u");
       ResultSet rs = statement.executeQuery();
       while (rs.next()) {%>
-        <center><h3>Active Users</h3></center>
+
         <tr>
           <td><%=rs.getString("username")%></td>
           <td><%=rs.getString("fullName")%></td>

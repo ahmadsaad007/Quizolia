@@ -22,6 +22,7 @@ public class quizResults extends HttpServlet {
         if(session == null || session.getAttribute("username")==null){
             out.print("<div style='margin-top: 50px; color: crimson;'>Please login first</div>");
             request.getRequestDispatcher("login.html").include(request, response);
+            return;
         }
         String username = (String) session.getAttribute("username");
         List<QuizSubmissions> list = ResultsDao.getResults(username);

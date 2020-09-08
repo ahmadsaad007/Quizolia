@@ -5,7 +5,7 @@ html{
     box-sizing: inherit;
 }
 body{
-    color: #e9e9cd;
+    color: black;
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     padding: 0;
     margin: 0;
@@ -39,32 +39,64 @@ td,th {
     background-color: #A1C6D7;
     color: white;
 }
+.containerHome{
+    justify-content: space-around;
+    display: flex;
+    width: 100%;
+}
 
 .container{
-    max-width: 800px;
     width: 85%;
     margin: 0 auto;
-    padding: 60px 0;
+    padding: 10px 0;
+}
+.quizContainer{
+    text-align: center;
+    border: 1px solid black;
 }
 
 form{
     max-width: 800px;
     width: 85%;
     margin: 0 auto;
-    padding: 60px 0;
+    padding: 10px 0;
 }
 
 .myDIV{
-    style:"display: block"
+    display: block;
 }
-#btns{
+
+.btns{
     text-align: center;
-    color: blanchedalmond;
+    /*color: blanchedalmond;*/
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    opacity: 0.9;
 }
-#btns:hover{
-    color: #e3d0b2;
+.btns:hover{
+    opacity:1;
 }
 
 #submitBtn{
     right: 25%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    opacity: 0.9;
+}
+#submitBtn:hover{
+    opacity:1;
+}
+
+.textBox{
+    width: 80%;
 }

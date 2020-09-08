@@ -18,7 +18,7 @@ public class FeedbackDao {
 
         PreparedStatement statement = null;
         try {
-            statement = connection.prepareStatement("INSERT INTO feedback VALUES (1,?,?)");
+            statement = connection.prepareStatement("INSERT INTO feedback VALUES (2,?,?)");
             statement.setInt(1, starValue);
             statement.setString(2, comment);
             int rs = statement.executeUpdate();

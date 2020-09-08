@@ -9,7 +9,7 @@
 
     <error-page>
         <exception-type>java.lang.Exception</exception-type>
-        <location>/Error.jsp</location>
+        <location>/Error.html</location>
     </error-page>
 
     <!--  Logging in Servlet  -->

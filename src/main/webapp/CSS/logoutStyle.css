@@ -11,6 +11,7 @@ body{
     margin: 0;
     font-size: 15px;
     line-height: 1.5;
+    text-align: center;
 }
 
 .logoutDiv{
@@ -24,6 +25,7 @@ body{
     margin: 0 auto;
     padding: 60px 0;
     position: center;
+    text-align: center;
 }
 
 .yesBtn {

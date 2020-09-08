@@ -4,14 +4,6 @@ html{
 *,*:before,*:after{
     box-sizing: inherit;
 }
-/*body{*/
-/*    color: black;*/
-/*    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;*/
-/*    padding: 0;*/
-/*    margin: 0;*/
-/*    font-size: 15px;*/
-/*    line-height: 1.5;*/
-/*}*/
 div.container{
     margin: auto;
     width: 95%;

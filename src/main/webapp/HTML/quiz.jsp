@@ -1,8 +1,5 @@
 <%@ page import="com.domain.Question" %>
 <%@ page import="java.util.List" %>
-<%@ page import="java.util.Arrays" %>
-
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <html>
@@ -11,15 +8,24 @@
     <link rel="stylesheet" type="text/css" href="/Quizolia_war/CSS/pageStyling.css">
 </head>
 <body>
-<div class="container">
-    <p id="question" ></p>
+<div class="container quizContainer">
+
+    <h2 id="question" ></h2>
+
     <%
+        session = request.getSession(false);
+
+        if(session == null || session.getAttribute("username")==null){
+            out.print("<div style='margin-top: 50px; color: crimson;'>Please login first</div>");
+            request.getRequestDispatcher("login.html").include(request, response);
+        }
         List<Question> questions =
                 (List<Question>)session.getAttribute("questions");
         int currentIndex = (int) session.getAttribute("currentIndex");
         List<String> userAnswer = (List<String>) session.getAttribute("userAnswer");
 
     %>
+
     <form method="post" action="nextSubmission">
         <div id="myDIV">
             <input type="radio" name="option" value="1"><p style="display:inline" id="option1"></p>
@@ -27,10 +33,11 @@
             <input type="radio" name="option" value="3"><p style="display:inline" id="option3"></p>
             <input type="radio" name="option" value="4"><p style="display:inline" id="option4"></p>
         </div>
-        <div id="btns">
-            <input id="prevBtn" type="submit" style="padding: 8px;" value="Prev" name="Prev">
-            <input id ="nextBtn" type="submit" style="padding: 8px; display: inline-block;" value="Next" name="Next">
-            <input id="submitBtn" style="padding: 8px; display: none;" type="submit" value="Submit" name="Submit">
+
+        <div>
+            <input class ="btns" id="prevBtn" type="submit" style="padding: 8px;" value="Prev" name="Prev">
+            <input class ="btns" id ="nextBtn" type="submit" style="padding: 8px; display: inline-block;" value="Next" name="Next">
+            <input class ="btns" id="submitBtn" style="padding: 8px; display: none;" type="submit" value="Submit" name="Submit">
         </div>
     </form>
     <p></p>
