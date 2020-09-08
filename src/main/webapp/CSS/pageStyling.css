@@ -1,0 +1,70 @@
+html{
+    box-sizing: border-box;
+}
+*,*:before,*:after{
+    box-sizing: inherit;
+}
+body{
+    color: #e9e9cd;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 5px solid black;
+}
+
+td,th {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+.table tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+.table tr:hover {
+    background-color: #ddd;
+}
+
+.table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #A1C6D7;
+    color: white;
+}
+
+.container{
+    max-width: 800px;
+    width: 85%;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+
+form{
+    max-width: 800px;
+    width: 85%;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+
+.myDIV{
+    style:"display: block"
+}
+#btns{
+    text-align: center;
+    color: blanchedalmond;
+}
+#btns:hover{
+    color: #e3d0b2;
+}
+
+#submitBtn{
+    right: 25%;
+}

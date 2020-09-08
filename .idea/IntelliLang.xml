@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="LanguageInjectionConfiguration">
+    <injection language="JAVA" injector-id="xml">
+      <display-name>root</display-name>
+      <place>xmlTag().withLocalName(string().equalTo(&quot;root&quot;)).withNamespace(string().equalTo(&quot;http://java.sun.com/JSP/Page&quot;))</place>
+    </injection>
+  </component>
+</project>
